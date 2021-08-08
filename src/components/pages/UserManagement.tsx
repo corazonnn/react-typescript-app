@@ -4,11 +4,14 @@ import { UserCard } from "../organisms/layout/user/UserCard";
 import { useAllUsers } from "../../hooks/userAllUsers"
 import { UserDetailModal } from '../organisms/layout/user/UserDetailModal';
 import { useSelectUser } from '../../hooks/useSelectUser';
+import { useLoginUser } from '../../hooks/useLoginUser';
 
 export const UserManagement: VFC = memo(() => {
   const { getUsers, users, loading } = useAllUsers();
   const { isOpen, onOpen, onClose } = useDisclosure()
   const { onSelectUser, selectedUser } = useSelectUser();
+  const {loginUser}= useLoginUser();
+  // console.log(loginUser)
   //初回だけgetUsers()を実行する
   useEffect(() => getUsers(), [])
 

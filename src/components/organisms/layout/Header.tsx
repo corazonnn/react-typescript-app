@@ -17,8 +17,8 @@ export const Header: VFC = memo(() => {
     <>
       <Flex
         as="nav"
-        bg="teal.500"
-        color="gray.50"
+        bg="purple.700"
+        color="white"
         align="center"
         justify="space-between"
         padding={{ base: 3, md: 5 }}
@@ -27,10 +27,12 @@ export const Header: VFC = memo(() => {
           <Heading as="h1" fontSize={{ base: "md", md: "lg" }}>ユーザー管理アプリ</Heading>
         </Flex>
         <Flex align="center" fontSize="sm" flexGrow={2} display={{ base: "none", md: "flex" }}>{/* flexGrowは伸縮率.他にflexGrowを設定してるFlexがないのでmaxまで広がる.(ユーザ管理アプリのすぐ横まで広がる) */}
-          <Box pr={4}>
+          <Box 
+          pr={4} 
+          fontWeight= "bold">
             <Link onClick={onClickUserManagement}>ユーザ一覧</Link>
           </Box>
-          <Link onClick={onClickSetting}>設定</Link>
+          <Link onClick={onClickSetting} fontWeight= "bold">設定</Link>
         </Flex>
         <MenuIconButton onOpen={onOpen} />
       </Flex>
